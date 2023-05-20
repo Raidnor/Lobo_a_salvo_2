@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="text_iniciar_sesion" type="id" />
+    <item name="btn_reg" type="id" />
+    <item name="text_password_reg" type="id" />
+</resources>
