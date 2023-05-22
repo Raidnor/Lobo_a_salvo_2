@@ -138,7 +138,7 @@
                     android:id="@+id/categoria_manuales"
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="60dp"
+                    android:layout_marginLeft="30dp"
                     app:cardCornerRadius="30dp">
 
                     <!-- Contenido de la categoría 3 -->
@@ -184,21 +184,24 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/btn_manual_usuario"
                         android:layout_width="64dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:padding="10dp"
                         android:background="@color/barra"
                         app:srcCompat="@drawable/ic_baseline_menu_book_24" />
 
                     <TextView
                         android:id="@+id/textView7"
-                        android:layout_width="wrap_content"
+                        android:layout_width="205dp"
                         android:layout_height="match_parent"
+                        android:padding="15dp"
                         android:text="Manual de usuario"
                         android:textAlignment="viewStart"
-                        android:textSize="24sp"
+                        android:textColor="@color/barra"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -217,21 +220,24 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/btn_perfil"
                         android:layout_width="64dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@color/barra"
-                        app:srcCompat="@drawable/ic_baseline_menu_book_24" />
+                        android:padding="10dp"
+                        app:srcCompat="@drawable/ic_baseline_report_problem_24" />
 
                     <TextView
                         android:id="@+id/textView9"
-                        android:layout_width="wrap_content"
+                        android:layout_width="205dp"
                         android:layout_height="match_parent"
+                        android:padding="15dp"
                         android:text="Reportar problema"
                         android:textAlignment="viewStart"
-                        android:textSize="24sp"
+                        android:textColor="@color/barra"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -250,21 +256,24 @@
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/btn_report"
                         android:layout_width="64dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:background="@color/barra"
-                        app:srcCompat="@drawable/ic_baseline_menu_book_24" />
+                        android:padding="10dp"
+                        app:srcCompat="@drawable/ic_baseline_person_24" />
 
                     <TextView
                         android:id="@+id/textView8"
                         android:layout_width="205dp"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="15dp"
                         android:text="Perfil"
                         android:textAlignment="textStart"
-                        android:textSize="24sp"
+                        android:textColor="@color/barra"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
