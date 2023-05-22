@@ -1,6 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/fondo">
 
+    <TextView
+        android:id="@+id/label_correo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="141dp"
+        android:text="Correo:"
+        android:textColor="@color/texto"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/correo_reg"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/label_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="28dp"
+        android:allowUndo="false"
+        android:text="@string/contrase_a"
+        android:textColor="@color/texto"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/correo_reg"
+        app:layout_constraintTop_toBottomOf="@+id/correo_reg" />
+
+    <TextView
+        android:id="@+id/label_password_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="18dp"
+        android:text="Confirmar contraseña"
+        android:textColor="@color/texto"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/password_reg"
+        app:layout_constraintTop_toBottomOf="@+id/label_password" />
+
+    <EditText
+        android:id="@+id/correo_reg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="21dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/texto"
+        app:layout_constraintEnd_toStartOf="@+id/verifi_correo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_correo" />
+
+    <EditText
+        android:id="@+id/password_reg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginBottom="11dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:textColor="@color/texto"
+        app:layout_constraintBottom_toTopOf="@+id/label_password_confirm"
+        app:layout_constraintStart_toStartOf="@+id/label_password" />
+
+    <EditText
+        android:id="@+id/password_reg_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="13dp"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:textColor="@color/texto"
+        app:layout_constraintStart_toStartOf="@+id/label_password_confirm"
+        app:layout_constraintTop_toBottomOf="@+id/label_password_confirm" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/registro"
+        android:textColor="@color/texto"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_registrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="15dp"
+        android:text="Registrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_reg_confirm" />
+
+    <ImageView
+        android:id="@+id/verifi_correo"
+        android:layout_width="40dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="112dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/correo_reg"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:srcCompat="@drawable/ic_baseline_check_24" />
+
+    <ImageView
+        android:id="@+id/verifi_pass"
+        android:layout_width="43dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginBottom="8dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/password_reg_confirm"
+        app:layout_constraintStart_toEndOf="@+id/password_reg_confirm"
+        app:srcCompat="@drawable/ic_baseline_check_24" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -44,4 +44,15 @@ class SQLDB(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, D
         cursor.close()
         return count > 0
     }
+
+    fun checkCorreo(username: String): Boolean {
+        val db = this.readableDatabase
+        val columns = arrayOf(COLUMN_USERNAME)
+        val selection = "$COLUMN_USERNAME = ?"
+        val selectionArgs = arrayOf(username)
+        val cursor: Cursor = db.query(TABLE_NAME, columns, selection, selectionArgs, null, null, null)
+        val count = cursor.count
+        cursor.close()
+        return count > 0
+    }
 }

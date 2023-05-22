@@ -1,5 +1,6 @@
 package com.example.lobo_a_salvo_v2
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
@@ -16,15 +17,17 @@ class Login_activity : AppCompatActivity() {
     private lateinit var editTextPassword: EditText
     private lateinit var buttonLogin: Button
     private lateinit var databaseHelper: SQLDB
+    private lateinit var button_registrar: Button
     private var cont=0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
+        //datos para iniciar sesion
         editTextUsername = findViewById(R.id.text_email_reg)
         editTextPassword = findViewById(R.id.text_password_reg)
         buttonLogin = findViewById(R.id.btn_reg)
-
+        //boton que aparece para registrarse
+        button_registrar = findViewById(R.id.btn_ir_registrar)
         databaseHelper = SQLDB(this)
 
         buttonLogin.setOnClickListener {
@@ -37,6 +40,10 @@ class Login_activity : AppCompatActivity() {
                             if (databaseHelper.checkUser(username, password)) {
                                 // Iniciar sesión exitoso, hacer algo aquí
                                 mensaje("Inicio correctamente")
+                                val intent = Intent(this, Principal_activity::class.java)
+                                startActivity(intent)
+                                //finalizamos esta actividad
+                                finish()
                             } else {
                                 cont++;
                                 mensaje("Inicio fallido")
@@ -56,6 +63,12 @@ class Login_activity : AppCompatActivity() {
 
 
 
+        }
+        button_registrar.setOnClickListener{
+            val intent = Intent(this, Registrar_activity::class.java)
+            startActivity(intent)
+            //finalizamos esta actividad
+            finish()
         }
     }
 
