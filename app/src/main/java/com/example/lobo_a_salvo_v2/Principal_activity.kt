@@ -1,13 +1,22 @@
 package com.example.lobo_a_salvo_v2
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
 
 class Principal_activity : AppCompatActivity() {
+
+    //objeto de sincronizacion
+    object Llamada_status{
+        var estatus = false
+        var tipo:String = ""
+        var control=Phone(estatus,tipo, Principal_activity())
+    }
+
     //boton llamar a seguridad
     private lateinit var button_llamar_seguridad: Button
     //boton llamar a salud
@@ -51,6 +60,12 @@ class Principal_activity : AppCompatActivity() {
             ir_manual_user()
             ir_report()
             ir_perfil()
+
+    }
+
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
     fun mensaje(mensaje: String){
@@ -59,25 +74,40 @@ class Principal_activity : AppCompatActivity() {
 
      fun llamar_seguridad(){
         button_llamar_seguridad.setOnClickListener{
-            mensaje("llamando a seguridad")
+            val intent = Intent(this,Llamando::class.java)
+            //pasando el objeto
+            Llamada_status.estatus = true
+            Llamada_status.tipo = "Seguridad"
+            startActivity(intent)
+
         }
     }
 
     fun llamar_salud(){
         button_llamar_salud.setOnClickListener{
             mensaje("Llamando a salud")
+            val intent = Intent(this,Llamando::class.java)
+            //pasando el objeto
+            Llamada_status.estatus = true
+            Llamada_status.tipo = "Salud"
+            startActivity(intent)
         }
     }
 
     fun ir_mapas(){
         button_mapas.setOnClickListener{
             mensaje("Mostrando mapas")
+            val intent = Intent(this, MapsActivity::class.java)
+            startActivity(intent)
         }
     }
 
     fun ir_manuales_ayuda(){
         button_manuales.setOnClickListener{
             mensaje("Ir manuales ayuda")
+            val intent = Intent()
+            intent.setDataAndType(Uri.parse("https://www.gob.mx/cms/uploads/attachment/file/783774/Manual_Primeros_Respondientes_v2_030321_compressed.pdf"), "application/pdf")
+            startActivity(intent)
         }
     }
 
