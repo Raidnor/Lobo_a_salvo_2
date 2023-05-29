@@ -123,12 +123,16 @@ class Principal_activity : AppCompatActivity() {
     fun ir_report(){
         button_report.setOnClickListener{
             mensaje("Ir report")
+            val intent = Intent(this,Report::class.java)
+            startActivity(intent)
         }
     }
 
     fun ir_perfil(){
         button_perfil.setOnClickListener{
             mensaje("Ir perfil")
+            val intent = Intent(this,Perfil::class.java)
+            startActivity(intent)
         }
     }
 

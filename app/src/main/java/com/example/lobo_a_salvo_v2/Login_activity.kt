@@ -43,6 +43,7 @@ class Login_activity : AppCompatActivity() {
                                 val intent = Intent(this, Principal_activity::class.java)
                                 startActivity(intent)
                                 //finalizamos esta actividad
+                                MainActivity.data.correo = username
                                 finish()
                             } else {
                                 cont++;
