@@ -10,4 +10,6 @@
     <color name="fondo">#0F2560</color>
     <color name="texto">#FFFFFFFF</color>
     <color name="barra">#095A8E</color>
+    <color name="spinner_text_color">#066DC8</color>
+
 </resources>

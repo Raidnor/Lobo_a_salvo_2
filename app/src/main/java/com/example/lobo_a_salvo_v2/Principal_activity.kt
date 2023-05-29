@@ -97,7 +97,7 @@ class Principal_activity : AppCompatActivity() {
     fun ir_mapas(){
         button_mapas.setOnClickListener{
             mensaje("Mostrando mapas")
-            val intent = Intent(this, MapsActivity::class.java)
+            val intent = Intent(this, Menu_mapas::class.java)
             startActivity(intent)
         }
     }
@@ -105,8 +105,8 @@ class Principal_activity : AppCompatActivity() {
     fun ir_manuales_ayuda(){
         button_manuales.setOnClickListener{
             mensaje("Ir manuales ayuda")
-            val intent = Intent()
-            intent.setDataAndType(Uri.parse("https://www.gob.mx/cms/uploads/attachment/file/783774/Manual_Primeros_Respondientes_v2_030321_compressed.pdf"), "application/pdf")
+            val intent = Intent(this,Menu_manuales::class.java)
+            //intent.setDataAndType(Uri.parse("https://www.gob.mx/cms/uploads/attachment/file/783774/Manual_Primeros_Respondientes_v2_030321_compressed.pdf"), "application/pdf")
             startActivity(intent)
         }
     }
@@ -114,6 +114,9 @@ class Principal_activity : AppCompatActivity() {
     fun ir_manual_user(){
         button_manual_user.setOnClickListener{
             mensaje("Ir manual usuario")
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.setDataAndType(Uri.parse("https://correobuap-my.sharepoint.com/:b:/g/personal/victor_hueyo_alumno_buap_mx/EXKCochPWfNNilS18ueW5hgBN5DbAZJNJBAqmoEzQhbzCw?e=c9R3aJ"),"application/pdf")
+            startActivity(intent)
         }
     }
 
